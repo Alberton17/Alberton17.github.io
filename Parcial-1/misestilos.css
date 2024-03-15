@@ -18,3 +18,19 @@ span ul li{
     color: darkslategrey;
     font-style: italic;
 }
+
+
+
+
+#boton{
+    background-color: crimson;
+    width: 50%;
+    height: 15%;
+    border: none;
+    border-radius: 20px;
+    color: cyan;
+}
+
+.link{
+    color: blueviolet;
+}
