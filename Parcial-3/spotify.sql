@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-05-2024 a las 03:01:27
+-- Tiempo de generación: 30-05-2024 a las 04:37:24
 -- Versión del servidor: 10.1.39-MariaDB
 -- Versión de PHP: 7.3.5
 
@@ -33,6 +33,22 @@ CREATE TABLE `artistas` (
   `nombre` varchar(100) NOT NULL,
   `descripcion` varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `artistas`
+--
+
+INSERT INTO `artistas` (`id`, `nombre`, `descripcion`) VALUES
+(1, 'Travis Scott', 'nigga '),
+(2, 'Luis Miguel', 'cantante de balada y rock'),
+(3, 'Guns n Roses', 'Banda de rock y rock alternativo'),
+(4, 'Kanye West', 'Cantante de pop y hiphop'),
+(5, 'Imagine Dragons', 'cantante indie underground'),
+(6, 'Mago de os', 'banda de rock en español'),
+(7, 'Enjambre', 'banda de rock en español'),
+(8, 'Taylor swift', 'reina del pop'),
+(9, 'Jarabe de palo', 'banda de rock en español'),
+(10, 'Drogadicto', 'rock en español');
 
 -- --------------------------------------------------------
 
@@ -85,6 +101,20 @@ CREATE TABLE `generos` (
   `nombre` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `generos`
+--
+
+INSERT INTO `generos` (`id`, `nombre`) VALUES
+(1, 'rock'),
+(2, 'pop'),
+(3, 'jazz'),
+(4, 'country'),
+(5, 'norteño'),
+(6, 'baladas'),
+(7, 'reggaeton'),
+(8, 'hiphop');
+
 -- --------------------------------------------------------
 
 --
@@ -96,6 +126,15 @@ CREATE TABLE `membresia` (
   `descripcion` varchar(100) NOT NULL,
   `precio` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `membresia`
+--
+
+INSERT INTO `membresia` (`id`, `descripcion`, `precio`) VALUES
+(1, 'gratuita', 0),
+(2, 'premium', 149),
+(3, 'familiar', 199);
 
 -- --------------------------------------------------------
 
@@ -215,7 +254,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `artistas`
 --
 ALTER TABLE `artistas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `artistas_canciones`
@@ -239,13 +278,13 @@ ALTER TABLE `favoritas`
 -- AUTO_INCREMENT de la tabla `generos`
 --
 ALTER TABLE `generos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `membresia`
 --
 ALTER TABLE `membresia`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `playlist`
