@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-05-2024 a las 04:37:24
+-- Tiempo de generación: 04-06-2024 a las 03:50:08
 -- Versión del servidor: 10.1.39-MariaDB
 -- Versión de PHP: 7.3.5
 
@@ -179,6 +179,22 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `nombre`, `correo`, `membresia_id`) VALUES
+(11, 'Julio', 'julioazul11@gmail.com', 1),
+(12, 'luis', 'luistachos9@gmail.com', 2),
+(13, 'alberto', 'alberto@gmail.com', 2),
+(14, 'cesar', 'pendejosoy@gmail.com', 2),
+(15, 'jeyli', 'jeili@gmail.com', 1),
+(16, 'peney', 'penein@gmail.com', 3),
+(17, 'yuliana', 'megustamiex@gmail.com', 2),
+(18, 'aqxel', 'axelcito', 1),
+(19, 'norman', 'gordo@gmail.com', 2),
+(20, 'mario', 'marion@gmail.com', 1);
+
+--
 -- Índices para tablas volcadas
 --
 
@@ -302,7 +318,7 @@ ALTER TABLE `playlist_canciones`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- Restricciones para tablas volcadas
