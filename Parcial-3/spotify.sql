@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-06-2024 a las 02:55:41
+-- Tiempo de generación: 08-06-2024 a las 03:37:07
 -- Versión del servidor: 10.1.39-MariaDB
 -- Versión de PHP: 7.3.5
 
@@ -83,7 +83,16 @@ CREATE TABLE `canciones` (
 --
 
 INSERT INTO `canciones` (`id`, `nombre`, `duracion`, `fecha`, `activo`, `foto`, `generos_id`) VALUES
-(1, 'cobarde', '03:00:00', '2011-06-09', 1, 'foto1', 1);
+(2, 'Song1', '00:00:38', '2024-06-07', 1, 'foto1', 1),
+(3, 'Song2', '00:00:00', '2024-06-07', 1, 'foto2', 2),
+(4, 'Song3', '00:00:00', '2024-06-07', 1, 'foto3', 1),
+(5, 'Song4', '00:02:14', '2024-06-07', 1, 'foto4', 8),
+(6, 'Song5', '00:00:00', '2024-06-07', 1, 'foto5', 2),
+(7, 'Song6', '00:00:00', '2024-06-07', 1, 'foto6', 6),
+(8, 'Song7', '00:00:00', '2024-06-07', 1, 'foto7', 1),
+(9, 'Song8', '00:01:35', '2024-06-07', 1, 'foto8', 2),
+(10, 'Song9', '00:00:00', '2024-06-07', 1, 'foto9', 7),
+(11, 'Song10', '00:00:00', '2024-06-07', 1, 'foto10', 8);
 
 -- --------------------------------------------------------
 
@@ -289,7 +298,7 @@ ALTER TABLE `artistas_canciones`
 -- AUTO_INCREMENT de la tabla `canciones`
 --
 ALTER TABLE `canciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `favoritas`
