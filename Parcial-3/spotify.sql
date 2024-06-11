@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-06-2024 a las 03:37:07
+-- Tiempo de generación: 11-06-2024 a las 04:00:14
 -- Versión del servidor: 10.1.39-MariaDB
 -- Versión de PHP: 7.3.5
 
@@ -168,6 +168,16 @@ CREATE TABLE `playlist` (
   `usuarios_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `playlist`
+--
+
+INSERT INTO `playlist` (`id`, `nombre`, `duracion`, `total_canciones`, `descripcion`, `publico`, `usuarios_id`) VALUES
+(1, 'canciones para llorar', '00:38:12', 15, 'recopilacion de baladas tristes', 1, 13),
+(2, 'rock en español', '00:30:23', 11, 'canciones de rock en español de distintos artistas', 1, 11),
+(3, 'pa\' bailar', '00:54:32', 18, 'canciones de reggaeton, cumbia, salsa y otros para bailar', 0, 14),
+(4, '90\'s', '00:30:43', 9, 'canciones de los 90\'s', 0, 15);
+
 -- --------------------------------------------------------
 
 --
@@ -322,7 +332,7 @@ ALTER TABLE `membresia`
 -- AUTO_INCREMENT de la tabla `playlist`
 --
 ALTER TABLE `playlist`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `playlist_canciones`
