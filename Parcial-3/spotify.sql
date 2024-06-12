@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-06-2024 a las 04:00:14
+-- Tiempo de generación: 12-06-2024 a las 03:03:39
 -- Versión del servidor: 10.1.39-MariaDB
 -- Versión de PHP: 7.3.5
 
@@ -191,6 +191,16 @@ CREATE TABLE `playlist_canciones` (
   `usuarios_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `playlist_canciones`
+--
+
+INSERT INTO `playlist_canciones` (`id`, `playlist_id`, `canciones_id`, `usuarios_id`) VALUES
+(1, 1, 4, 13),
+(2, 3, 10, 11),
+(3, 2, 5, 11),
+(4, 4, 2, 15);
+
 -- --------------------------------------------------------
 
 --
@@ -338,7 +348,7 @@ ALTER TABLE `playlist`
 -- AUTO_INCREMENT de la tabla `playlist_canciones`
 --
 ALTER TABLE `playlist_canciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
