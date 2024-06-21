@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto final</title>
+    <script src="css/bootstrap.css"></script>
+    
+</head>
+<body>
+    <h5>1. Mostrar todos los alumnos de la tabla alumnos</h5>
+    <h4>SELECT * FROM alumno</h4>
+    <h5>2. Mostrar los nombres de los cursos con sus respectivas asignaturas</h5>
+    <h4>SELECT curso.nombreDescriptivo.asignatura.nombre <br>
+        FROM curso INNER JOIN asignatura <br>
+        ON curso.idCurso=asignatura.curso;</h4>
+   
+    
+</body>
+</html>
