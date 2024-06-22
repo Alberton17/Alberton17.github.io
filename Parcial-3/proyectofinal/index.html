@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<body><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,7 +14,13 @@
     <h4>SELECT curso.nombreDescriptivo.asignatura.nombre <br>
         FROM curso INNER JOIN asignatura <br>
         ON curso.idCurso=asignatura.curso;</h4>
-   
+    <h5>3. Mostrar nombre y apellido de todos los alumnos que tengan beca</h5>
+    <h4>SELECT nombre, apellido1, apellido2, beca FROM alumno WHERE beca LIKE "si" </h4>
+    <h5>4. Obtener listado de profesores (nombre, apellido, numero de contacto)</h5>
+    <h4>SELECT profesor.nombre, profesor.apellido1, profesor.apellido2, tlfcontactoprof.telefono FROM profesor <br>
+    INNER JOIN tlfcontactoprof ON profesor.idProfesor = tlfcontactoprof.idProfesor</h4>
+    <h5>5. Obtener listado de alumnos (todos los campos) que estan inscritos a la asignatura de programacion</h5>
+    <h4></h4>
     
 </body>
 </html>
