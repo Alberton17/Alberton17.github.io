@@ -8,19 +8,30 @@
     
 </head>
 <body>
-    <h5>1. Mostrar todos los alumnos de la tabla alumnos</h5>
-    <h4>SELECT * FROM alumno</h4>
-    <h5>2. Mostrar los nombres de los cursos con sus respectivas asignaturas</h5>
-    <h4>SELECT curso.nombreDescriptivo.asignatura.nombre <br>
+    <h4>1. Mostrar todos los alumnos de la tabla alumnos</h4>
+    <h5>SELECT * FROM alumno</h5>
+    <h4>2. Mostrar los nombres de los cursos con sus respectivas asignaturas</h4>
+    <h5>SELECT curso.nombreDescriptivo.asignatura.nombre <br>
         FROM curso INNER JOIN asignatura <br>
-        ON curso.idCurso=asignatura.curso;</h4>
-    <h5>3. Mostrar nombre y apellido de todos los alumnos que tengan beca</h5>
-    <h4>SELECT nombre, apellido1, apellido2, beca FROM alumno WHERE beca LIKE "si" </h4>
-    <h5>4. Obtener listado de profesores (nombre, apellido, numero de contacto)</h5>
-    <h4>SELECT profesor.nombre, profesor.apellido1, profesor.apellido2, tlfcontactoprof.telefono FROM profesor <br>
-    INNER JOIN tlfcontactoprof ON profesor.idProfesor = tlfcontactoprof.idProfesor</h4>
-    <h5>5. Obtener listado de alumnos (todos los campos) que estan inscritos a la asignatura de programacion</h5>
-    <h4></h4>
-    
+        ON curso.idCurso=asignatura.curso;</h5>
+    <h4>3. Mostrar nombre y apellido de todos los alumnos que tengan beca</h4>
+    <h5>SELECT nombre, apellido1, apellido2, beca FROM alumno WHERE beca LIKE "si" </h5>
+    <h4>4. Obtener listado de profesores (nombre, apellido, numero de contacto)</h4>
+    <h5>SELECT profesor.nombre, profesor.apellido1, profesor.apellido2, tlfcontactoprof.telefono FROM profesor <br>
+    INNER JOIN tlfcontactoprof ON profesor.idProfesor = tlfcontactoprof.idProfesor</h5>
+    <h4>5. Obtener listado de alumnos (todos los campos) que estan inscritos a la asignatura de programacion</h4>
+    <h5>SELECT
+        al.* FROM alumno al <br>
+        JOIN matricula m ON al.idAlumno = m.idAlumno JOIN asignatura a ON m.idAsignatura = a.idAsignatura WHERE a.nombre = 'Programacion'</h5>
+    <h4>6. Obtener listado de profesores y asignatura que imparten</h4>
+    <h5>SELECT
+        p.idProfesor, p.nombre AS nombre_profesor, p.apellido1 AS apellido1_profesor, p.apellido2 AS apellido2_profesor, a.idAsignatura, a.nombre AS nombre_asignatura FROM profesor p <br>
+        JOIN impartir i ON p.idProfesor = i.idProfesor JOIN asignatura a ON i.idAsignatura = a.idAsignatura
+        ORDER BY
+        p.idProfesor, a.idAsignatura;</h5>
+    <h4>7. Mostrar la asignatura que tiene mas alumnos inscritos y su total</h4>
+    <h5>SELECT a.idAsignatura, a.nombre, COUNT(m.idAlumno) AS total_alumnos FROM asignatura a
+        JOIN matricula m ON a.idAsignatura = m.idAsignatura GROUP BYa.idAsignatura, a.nombre
+        ORDER BY total_alumnos DESC LIMIT 1;</h5>
 </body>
 </html>
