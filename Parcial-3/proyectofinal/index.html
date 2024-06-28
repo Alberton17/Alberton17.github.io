@@ -8,30 +8,109 @@
     
 </head>
 <body>
-    <h4>1. Mostrar todos los alumnos de la tabla alumnos</h4>
-    <h5>SELECT * FROM alumno</h5>
-    <h4>2. Mostrar los nombres de los cursos con sus respectivas asignaturas</h4>
-    <h5>SELECT curso.nombreDescriptivo.asignatura.nombre <br>
-        FROM curso INNER JOIN asignatura <br>
-        ON curso.idCurso=asignatura.curso;</h5>
-    <h4>3. Mostrar nombre y apellido de todos los alumnos que tengan beca</h4>
-    <h5>SELECT nombre, apellido1, apellido2, beca FROM alumno WHERE beca LIKE "si" </h5>
-    <h4>4. Obtener listado de profesores (nombre, apellido, numero de contacto)</h4>
-    <h5>SELECT profesor.nombre, profesor.apellido1, profesor.apellido2, tlfcontactoprof.telefono FROM profesor <br>
-    INNER JOIN tlfcontactoprof ON profesor.idProfesor = tlfcontactoprof.idProfesor</h5>
-    <h4>5. Obtener listado de alumnos (todos los campos) que estan inscritos a la asignatura de programacion</h4>
-    <h5>SELECT
-        al.* FROM alumno al <br>
-        JOIN matricula m ON al.idAlumno = m.idAlumno JOIN asignatura a ON m.idAsignatura = a.idAsignatura WHERE a.nombre = 'Programacion'</h5>
-    <h4>6. Obtener listado de profesores y asignatura que imparten</h4>
-    <h5>SELECT
-        p.idProfesor, p.nombre AS nombre_profesor, p.apellido1 AS apellido1_profesor, p.apellido2 AS apellido2_profesor, a.idAsignatura, a.nombre AS nombre_asignatura FROM profesor p <br>
-        JOIN impartir i ON p.idProfesor = i.idProfesor JOIN asignatura a ON i.idAsignatura = a.idAsignatura
-        ORDER BY
-        p.idProfesor, a.idAsignatura;</h5>
-    <h4>7. Mostrar la asignatura que tiene mas alumnos inscritos y su total</h4>
-    <h5>SELECT a.idAsignatura, a.nombre, COUNT(m.idAlumno) AS total_alumnos FROM asignatura a
-        JOIN matricula m ON a.idAsignatura = m.idAsignatura GROUP BYa.idAsignatura, a.nombre
-        ORDER BY total_alumnos DESC LIMIT 1;</h5>
+    <div class="container">
+        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="10000">
+                <img src="" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>1. Mostrar todos los alumnos de la tabla alumnos</h5>
+                  <p>SELECT * FROM alumno</p>
+                </div>
+              </div>
+              <div class="carousel-item" data-bs-interval="2000">
+                <img src="" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>2. Mostrar los nombr dese los cursos con sus respectivas asignaturas</h5>
+                  <p>SELECT curso.nombreDescriptivo.asignatura.nombre <br>
+                    FROM curso INNER JOIN asignatura</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="consulta3.png" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>3. Mostrar nombre y apellido de todos los alumnos que tengan beca</h5>
+                  <p>SELECT nombre, apellido1, apellido2, beca FROM alumno WHERE beca LIKE "si" </p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="consulta4.png" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>4. Obtener listado de profesores (nombre, apellido, numero de contacto)</h5>
+                  <p>SELECT profesor.nombre, profesor.apellido1, profesor.apellido2, tlfcontactoprof.telefono FROM profesor <br>
+                    INNER JOIN tlfcontactoprof ON profesor.idProfesor = tlfcontactoprof.idProfesor</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="practica5.png" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>5. Obtener listado de alumnos (todos los campos) que estan inscritos a la asignatura de programacion</h5>
+                  <p>SELECT al.* FROM alumno al <br>
+                    JOIN matricula m ON al.idAlumno = m.idAlumno JOIN asignatura a ON m.idAsignatura = a.idAsignatura WHERE a.nombre = 'Programacion'</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="practica6.png" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>6. Obtener listado de profesores y asignatura que imparten</h5>
+                  <p>SELECT p.idProfesor, p.nombre AS nombre_profesor, p.apellido1 AS apellido1_profesor, p.apellido2 AS apellido2_profesor, a.idAsignatura, a.nombre AS nombre_asignatura FROM profesor p <br>
+                    JOIN impartir i ON p.idProfesor = i.idProfesor JOIN asignatura a ON i.idAsignatura = a.idAsignatura
+                    ORDER BY
+                    p.idProfesor, a.idAsignatura;</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="consulta7.png" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>7. Mostrar la asignatura que tiene mas alumnos inscritos y su total</h5>
+                  <p>SELECT a.idAsignatura, a.nombre, COUNT(m.idAlumno) AS total_alumnos FROM asignatura a
+                    JOIN matricula m ON a.idAsignatura = m.idAsignatura GROUP BYa.idAsignatura, a.nombre
+                    ORDER BY total_alumnos DESC LIMIT 1;</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="consulta8.png" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>8. OBTENER EL LISTADO DE ALUMNOS QUE LES DA CLASE EL PROFESOR CON ID PR048 (JOSE MANUEL), SIN IMPORTAR EN QUE ASIGNATURA ESTÉ INSCRITO</h5>
+                  <p>SELECT a.idAlumno, a.nombre, a.apellido1, a.apellido2, a.email FROM alumno a <br>
+                    JOIN matricula m ON a.idAlumno = m.idAlumno JOIN impartir i ON m.idAsignatura = i.idAsignatura WHERE i.idProfesor = 'PR048'</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="consulta9.png" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>9. OBTENER EL LISTADO DE CURSOS, CON ASIGNATURA, Y EL MAESTRO QUE LAS IMPARTE</h5>
+                  <p>SELECT c.idCurso, c.nombreDescriptivo AS nombre_curso, a.idAsignatura, a.nombre AS nombre_asignatura, p.idProfesor, p.nombre AS nombre_profesor, p.apellido1 AS apellido1_profesor, p.apellido2 AS apellido2_profesor FROM curso c <br>
+                    JOIN asignatura a ON c.idCurso = a.curso JOIN impartir i ON a.idAsignatura = i.idAsignatura <br>
+                   JOIN profesor p ON i.idProfesor = p.idProfesor ORDER BY c.idCurso, a.idAsignatura, p.idProfesor</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="consulta10.png" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>10. OBTENER EL LISTADO DE ALUMNOS ,CON ASIGNATURAS QUE CURSA, PROFESOR QUE IMPARTE Y CURSI AL QUE PERTENECE</h5>
+                  <p>SELECT al.idAlumno, al.nombre AS nombre_alumno, al.apellido1 AS apellido1_alumno, al.apellido2 AS apellido2_alumno, a.idAsignatura, a.nombre AS nombre_asignatura, p.idProfesor, <br>
+                    p.nombreA S nombre_profesor, p.apellido1 AS apellido1_profesor, p.apellido2 AS apellido2_profesor, c.idCurso, c.nombreDescriptivo AS nombre_curso FROM alumno al <br>
+                    JOIN matricula m ON al.idAlumno = m.idAlumno JOIN asignatura a ON m.idAsignatura = a.idAsignatura <br>
+                    JOIN impartir i ON a.idAsignatura = i.idAsignatura JOIN profesor p ON i.idProfesor = p.idProfesor JOIN curso c ON a.curso = c.idCurso ORDER BY al.idAlumno, a.idAsignatura</p>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+    </div>
+    
 </body>
 </html>
